@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "SLM Question Answering";
+}
+
+<h2>Ask a Question to the Phi-3 Small Language Model</h2>
+
+<form method="post" asp-action="AskQuestion">
+    <div>
+        <label for="userQuestion">Enter your question:</label>
+        <input type="text" name="userQuestion" id="userQuestion" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary p-2 mt-2">Ask</button>
+</form>
+
+@if (ViewBag.Answer != null)
+{
+    <h3>Response:</h3>
+    <p>@ViewBag.Answer</p>
+}
